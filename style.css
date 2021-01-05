@@ -608,10 +608,7 @@ ul
     {
         height: 120px;
     }
-    .element-activites
-    {
-        
-    }
+    
     #conteneur-footer
     {
         flex-direction: column;
@@ -633,7 +630,7 @@ ul
     }
     #conteneur-activites
     {
-        padding: 0px;
+        padding: 10px;
     }
     .deuxieme-p
     {
