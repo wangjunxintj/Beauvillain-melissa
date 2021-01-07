@@ -1,0 +1,405 @@
+@font-face {
+    font-family: shrikhand;
+    src: url(../font/Shrikhand-Regular.ttf);
+}
+@font-face {
+    font-family: roboto;
+    src: url(../font/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: roboto-black;
+    src: url(../font/Roboto-Black.ttf);
+}
+$couleur-violet : #9356DC;
+$couleur-rose:#FF79DA;
+$couleur-vertclaire:#99E2D0;
+$policeTitre:shrikhand;
+$policeTexte:roboto;
+$policearrondie:roboto-black;
+.nav
+{
+    display: flex;
+}
+header
+{
+    position: relative;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    font-family: $policeTexte;
+    h1
+    {
+        margin: 0;
+        font-family:$policeTitre;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+    }
+    
+    
+}
+.chargement
+{ 
+/*Creation du loader*/
+border: 10px solid #f3f3f3;
+  border-top:10px solid pink;
+  border-bottom:10px solid blue;
+  border-radius:50%;
+width:100px;
+height:100px;
+-webkit-animation:spin 3s linear infinite;
+  -o-animation:spin 3s linear infinite;
+  animation:spin 3s linear infinite;
+  
+  
+/* placement loader au milieux de la page*/
+  margin:auto;
+  top:0; left:0; right:0; bottom:0;
+  position: fixed;
+
+}
+/*animation du loader*/
+@-webkit-keyframes spin
+{  
+  0%{
+    -webkit-transform:rotate(0deg);
+    }
+  100%{
+    -webkit-transform:rotate(360deg);
+
+  }
+}
+
+@keyframes spin
+{  
+  0%{
+    transform:rotate(0deg);
+    }
+  100%{
+    transform:rotate(360deg);
+    
+  }
+}
+body
+{
+    margin: 0px;
+}
+
+.logo
+{
+    background-color: white;
+    box-shadow: 5px 5px 5px lightgray;
+    padding: 10px;
+    position: relative;
+}
+.lieu
+{
+    background-color: #d3d3d387;
+    text-align: center;
+    padding: 20px;
+    font-family: $policeTexte;
+}
+.fa-map-marker-alt
+{
+    margin-right: 15px;
+}
+#conteneur-description
+{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 60px;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+
+    h2 
+    {
+        margin-top: 0px;
+        margin-bottom: 20px;
+        font-family: $policeTexte;
+        margin-left: 50px;
+        margin-right: 50px;
+        
+    }
+    p
+    {
+        margin-top: 15px;
+        margin-bottom: 30px;
+        font-family: $policeTexte;
+        background-color: "F2F2F2";
+        margin-left: 50px;
+        margin-right: 50px;
+
+    }
+}
+ 
+
+.rechercher
+{
+    background-color:#a5498b ;
+    color: white;
+    border-radius: 30px;
+    padding: 15px 20px  15px 20px;
+    font-size: 20px;
+    box-shadow: 4px 4px 4px #808080a8;
+    border: none;
+    background: linear-gradient($couleur-rose,$couleur-violet);
+    transform: scale(1);
+    transition: transform 400ms;
+    transition-duration: 200ms;
+    
+    &:hover
+    {
+        transform: scale(1.15);
+        box-shadow: 5px 5px 5px gray;
+        filter: brightness(110%);
+    }
+    
+}
+#conteneur-fonctionnement
+{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    padding-left: 20px;
+    font-family: $policeTexte;
+}
+.bouton-fonctionnement
+{
+    border: 3px #f2f2f2 solid;
+    background-color: #f2f2f2;
+    text-align:left;
+    border-radius: 15px;
+    box-shadow: 3px 3px 3px lightgray;
+    padding: 15px;
+    font-family: $policeTexte;
+    margin:10px;
+}
+.icone-fonctionnement
+{
+    color: #7e7e7e;
+    margin-right: 10px;
+}
+.bouton-fonctionnement:hover
+{
+    background-color: #f5edff;   
+}
+.fonctionnement1
+{
+    position: absolute;
+    margin-left: -2.2rem;
+    height: 1.75rem;
+    width: 1.75rem;
+    display: flex;
+    justify-content: center;
+    background-color: $couleur-violet;
+    align-items: center;
+    border-radius: 100px;
+    color: white;
+}
+.list-resto
+{
+    background-color: #f2f2f2;
+    padding-bottom: 20px;
+    a
+    {
+        text-decoration: none;
+    }
+    h2
+    {
+        font-family: $policearrondie;
+        padding-top: 45px;
+        padding-left: 20px;
+        margin-bottom: 0;
+    }
+    #conteneur-restaurants
+    {
+        display: flex;
+        flex-direction: column;
+        .carte-resto {
+            flex: 1;
+        }
+    }
+    .element-carte
+    {
+        padding: 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        img
+        {
+            flex: 1;
+            max-width: none;
+            max-height: none;
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 20px 20px 0px 0px;
+        }
+        .description
+        {
+            flex: 1;
+            display: flex;
+            border-radius: 0px 0px 20px 20px;
+            background-color: white;
+            font-family: $policeTexte;
+            color: black;
+            flex-direction: column;
+            padding-left: 10px;
+
+            h3 {
+                margin: 0;
+                padding-left: 10px;
+                padding-top: 15px;
+            }
+
+            p {
+                margin: 0;
+                padding-left: 10px;
+                padding-top: 5px;
+                padding-bottom: 17px;
+            }
+        }
+        .nouveau
+        {
+            background-color:$couleur-vertclaire;
+            color: #1b6150;
+            padding: .5rem;
+            border-radius: 3px;
+            position: absolute;
+            right: 40px;
+            top: 30px;
+            font-weight: bold;
+            font-family: $policeTexte;
+        }
+    }
+}
+
+.far 
+{
+    vertical-align: middle;
+    padding: 10px;
+    position: absolute;
+    bottom: 40px;
+    right: 30px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 400ms;
+    &:hover
+    {
+        color: $couleur-rose;
+        transition: 700ms;
+        font-weight: 900;
+    }
+} 
+    
+.pied-de-page
+{
+    color: white;
+    background-color:#353535;
+    
+    h3
+    {
+        font-family: $policeTitre;
+    }
+    p
+    {
+        margin: 5px;
+    }
+    a
+    {
+        color: white;
+        text-decoration: none;
+        font-family: roboto;
+    }
+    :hover
+
+    .fas
+    {
+        margin-right: 10px;
+    }
+    
+    .navigation
+    {
+        display: flex;
+        flex-direction: column;
+        padding-left: 25px;
+    }
+}
+.background-chargement {
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: #000;
+    position: fixed;
+    //background: rgba(0, 0, 0, 0.5);
+    background-color:rgba(255,255,255,0.5) ;
+    
+    -webkit-animation:fadeOut 0.5s 2s forwards;;
+    -o-animation:fadeOut 0.5s 2s forwards;;
+    animation:fadeOut 0.5s 2s forwards;
+    
+ }
+ .chargement
+ { 
+    /*Creation du loader*/
+
+    border: 10px solid #f3f3f3;
+    border-top:10px solid $couleur-rose;
+    border-bottom:10px solid $couleur-violet;
+    border-radius:50%;
+    width:100px;
+    height:100px;
+    z-index:15;
+    -webkit-animation:spin 2s linear infinite, fadeOut 0.5s 2s forwards;;
+    -o-animation:spin 2s linear infinite, fadeOut 0.5s 2s forwards;;
+    animation:spin 2s linear infinite, fadeOut 0.5s 2s forwards;
+
+    /* placement loader au milieux de la page*/
+
+    margin:auto;
+    position:fixed;
+    top:0; left:0; right:0; bottom:0;
+   
+ }
+ /*animation du loader*/
+
+ @-webkit-keyframes spin
+ {  
+   0%{
+     -webkit-transform:rotate(0deg);
+     }
+   100%{
+     -webkit-transform:rotate(360deg);
+   }
+ }
+ 
+ @keyframes fadeOut 
+ {
+     0% {
+       opacity: 1;
+     }
+     100% {
+       visibility: hidden;
+       opacity: 0;
+     }
+ }
+
+@media screen and (min-width:769px)
+{
+    .list-resto
+    {
+        #conteneur-restaurants {
+            flex-direction: row;
+        }
+        
+    }
+    .pied-de-page
+    {
+        .navigation
+        {
+            display: flex;
+            text-align: center;
+        }
+    }
+}

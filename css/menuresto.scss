@@ -1,0 +1,348 @@
+@font-face {
+    font-family: shrikhand;
+    src: url(../font/Shrikhand-Regular.ttf);
+}
+@font-face {
+    font-family: roboto;
+    src: url(../font/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: roboto-black;
+    src: url(../font/Roboto-Black.ttf);
+}
+
+@keyframes fadeIn 
+{
+    0% {
+      opacity: 0;
+    }
+    100% {
+      visibility: visible;
+      opacity: 1;
+    }
+}
+$couleur-noir:#353535;
+$couleur-vertclaire:#99e2d0;
+$couleur-rose:#FF79DA;
+$couleur-violet : #9356DC;
+$policeTitre:shrikhand;
+$policeTexte:roboto;
+$policearrondie:roboto-black;
+header
+{
+    position: relative;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    font-family: $policeTexte;
+    
+    .fas
+    {
+        display: flex;
+        justify-content: flex-start;
+        position: relative;
+        bottom: 30px;
+        font-size: 20px;
+        padding-left: 20px;
+        color: black;
+    }
+    a
+      {
+          text-decoration: none;
+      }
+    h1
+    {
+        margin: 0;
+        font-family:$policeTitre;
+        text-align: center;
+       
+    }
+}
+body
+{
+    margin: 0px;
+    overflow-x: hidden;
+}   
+.image
+{
+        width: 100%;
+        height: 100%;
+}
+
+@for $i from 1 through 10 
+{
+    .carte:nth-child(#{$i}n) {
+        animation-delay: #{$i * 0.3}s;
+    }
+}
+
+.carte {
+    visibility: hidden;
+    animation: 0.5s fadeIn;
+    animation-fill-mode: forwards;
+}
+
+
+#conteneur-menu
+{
+    background-color:#F2F2F2;
+    border-radius: 45px 45px 0px 0px;
+    margin-top: -50px
+    ;
+    position: relative;
+    padding: 20px;
+    #conteneur-carte {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .titre-resto
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+    .titre
+    {
+        position: relative;
+            &::before
+            {
+                background: #99E2D0;
+                height: 3px;
+                width: 35px;
+                position: absolute;
+                bottom: 10px;
+                content: ""
+              
+            }
+        h3 
+        {
+            font-family: $policeTexte;
+            font-weight: 300;
+            
+        }
+    }
+    
+    h2
+    {
+        font-family:$policeTitre;
+        margin: 0px;
+        padding-top: 5px;
+        font-size: 27px;
+    }
+    .far
+    {
+        color: gray;
+        font-size: 30px;
+        padding-right: 15px;
+        margin-top: 10px;
+       transition: transform, 400ms;
+      
+        &:hover
+        {
+            transition: 700ms;
+            color: $couleur-rose;
+            font-weight: 900;
+        }
+    }
+    .prix
+    {
+        display: flex;
+        background-color: white;
+        justify-content: space-between;
+        border-radius: 10px 0px 0px 10px;
+        
+        p
+        {
+            margin: 0px;
+            font-family: $policeTexte;
+           
+        }
+    }
+    
+    .menu
+    {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .input-menu {
+            display: none;
+        }
+        .input-menu:checked {
+            & + label .bouton-carte
+            {
+                width: 20%;
+                opacity: 1;
+            }
+            & + label .element-carte
+            {
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+            }
+            & + label .bouton-carte i
+            {
+                transform: rotate(-360deg);
+            }
+        } 
+
+        h4
+        {
+            margin-top: 10px;
+            margin-bottom:0px ;
+            font-family: $policeTexte ;
+            padding-bottom: 5px;
+        }
+        
+        .carte
+        {
+            display: flex;
+            margin-bottom: 15px;
+            cursor: pointer;
+            &:hover > .bouton-carte
+            {
+                width: 20%;
+                transition-duration: 0.5s;
+                transition-timing-function: ease;
+                opacity: 1;
+            }
+            &:hover > .bouton-carte i
+            {
+                transform: rotate(-360deg);
+                transition-duration: 0.5s;
+            }
+            &:hover > .element-carte
+            {
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+            }
+            
+            .element-carte
+            {
+                background-color: white;
+                flex-direction: column;
+                display: flex;
+                flex: 1;
+                border-radius: 10px 10px 10px 10px;
+                padding: 10px;
+                padding-top: 0px;
+                box-shadow: 2px 4px 2px lightgray;
+                overflow: hidden;
+                .prix p {
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+            }
+            .bouton-carte
+            {
+                background: #99e2d0;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                width: 0%;
+                transition-duration: 0.5s;
+	            transition-timing-function: ease;
+                border-radius: 0px 10px 10px 0px;
+                opacity: 0;
+                box-shadow: 2px 4px 2px lightgray;
+                    
+               
+                i 
+                {
+                    background: #F2F2F2;
+                    padding: 0.5rem;
+                    color: $couleur-vertclaire;
+                    border-radius: 50%;
+                }
+            }
+           
+        }
+    }
+}
+.bouton-commander
+{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+
+  .commander
+    {
+        background-color:#a5498b ;
+        color: white;
+        border-radius: 30px;
+        padding: 15px 30px  15px 30px;
+        font-size: 20px;
+        box-shadow: 4px 4px 4px #808080a8;
+        border: none;
+        background: linear-gradient($couleur-rose ,$couleur-violet);
+        transform: scale(1);
+        transition: transform 400ms;
+        transition-duration: 200ms;
+        
+             &:hover
+            {
+                transform: scale(1.15);
+               filter: brightness(110%);
+               box-shadow: 5px 5px 5px gray;
+                
+            }
+    }
+}  
+  
+  
+.pied-de-page
+{
+    color: white;
+    background-color:$couleur-noir;
+    padding-bottom: 30px;
+    
+    h3
+    {
+        font-family: $policeTitre;
+    }
+    p
+    {
+        margin: 5px;
+    }
+    a
+    {
+        color: white;
+        text-decoration: none;
+        font-family: $policeTexte;
+    }
+    
+    .fas
+    {
+        width: 20px;
+        font-size: 14px;
+    }
+    
+    .navigation
+    {
+        display: flex;
+        flex-direction: column;
+        padding-left: 25px;
+    }
+}
+@media screen and (min-width:769px )
+{
+    #conteneur-menu
+    {
+        #conteneur-carte {
+            display: flex;
+            flex-direction: row;
+
+            .menu {
+                padding: 10px 20px;
+            }
+        }
+    }
+    .pied-de-page
+    {
+        .navigation
+        {
+            display: flex;
+            text-align: center;
+        }
+    }
+}
